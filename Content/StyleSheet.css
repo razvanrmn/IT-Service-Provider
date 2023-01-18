@@ -1,0 +1,56 @@
+﻿body {
+    font: "Trebuchet MS", Verdana, sans-serif;
+    background-color: #EEE2DC;
+    color : #123C69;
+}
+
+a.btn.btn-primary {
+    background-color: #AC3B61;
+    border-color:#AC3B61;
+    color: #EEE2DC;
+    border-radius: 30%;
+}
+
+a.btn {
+    background-color: #EDC7B7;
+    color: #AC3B61;
+}
+
+h1, h2, p {
+    color: #123C69;
+}
+
+.navbar-collapse collapse {
+    background-color: #123C69;
+    color: #EEE2DC;
+}
+
+.jumbotron {
+    background-color: #EEE2DC;
+}
+
+div.container body-content{
+    background-color:#EEE2DC;
+}
+
+.navbar-inverse{
+    background-color: #123C69;
+}
+
+li{
+    color:#EEE2DC;
+}
+
+th, tr{
+    color:#123C69;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #EEE3DC;
+}
+
+.btn-default {
+    color: #EEE2DC;
+    background-color: #AC3B61;
+    border-radius: 30%;
+}
