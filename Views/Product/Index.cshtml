@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MultiLanguage.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+}
+
+<h2>Products</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Basic Package</h2>
+        <p>
+            Description
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 1}) </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Advanced Package</h2>
+        <p>Description</p>
+        <p> <a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 2}) </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Pro Package</h2>
+        <p>Description</p>
+        <p><a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 3}) </p>
+    </div>
+</div>
+</table>
