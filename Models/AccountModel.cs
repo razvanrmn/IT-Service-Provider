@@ -18,7 +18,7 @@ namespace MultiLanguage.Models
         public string Username { get; set; }
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
-        [RegularExpression(@"[a-z0-9]{6,}", ErrorMessage = "Please enter min 6 characters password")]
+       // [RegularExpression(@"[a-z0-9]{6,}", ErrorMessage = "Please enter min 6 characters password")]
 
         [Display(Name = "Password", ResourceType = typeof(MultiLanguage.Res.Resource))]
         public string Password { get; set; }

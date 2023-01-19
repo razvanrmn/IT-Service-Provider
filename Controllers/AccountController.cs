@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -38,15 +40,17 @@ namespace MultiLanguage.Controllers
         {
             Singleton.Instance.writeMessage("Create button clicked at: " + dateTimeNow.LocalDateTime);
             var user = context.Accounts.SingleOrDefault(x => x.Username == model.Username || x.Password == model.Password || x.Email == model.Email);
-            // var password = context.Accounts.SingleOrDefault(x => x.Password == model.Password);
-            //var email = context.Accounts.SingleOrDefault(x => x.Email == model.Email);
+            string pass = cryptPass(model.Password);
             if (user == null)
             {
+                model.Password = pass;
                 context.Accounts.Add(model);
                 context.SaveChanges();
             }
-            Thread t = new Thread(new ThreadStart(Singleton.WriteToConsole));
-            t.Start();
+            else
+            {
+               
+            }
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -109,9 +113,17 @@ namespace MultiLanguage.Controllers
                 context.Accounts.Remove(accountModel);
                 context.SaveChanges();
             }
-            Thread t = new Thread(new ThreadStart(Singleton.WriteToConsole));
-            t.Start();
             return RedirectToAction("Index");
         }
+
+        public string cryptPass(string password)
+        {
+            byte[] strings = Encoding.UTF8.GetBytes("aaaaa");
+            HashAlgorithm cryptoProvider = new SHA256CryptoServiceProvider();
+            byte[] hashValue = null;
+            hashValue = cryptoProvider.ComputeHash(strings);
+            return Encoding.UTF8.GetString(hashValue);
+        }
+
     }
 }

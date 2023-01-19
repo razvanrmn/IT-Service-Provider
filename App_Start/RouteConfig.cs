@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace IT_Service_Provider
+namespace MultiLanguage
 {
     public class RouteConfig
     {

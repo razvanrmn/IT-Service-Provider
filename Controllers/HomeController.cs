@@ -13,9 +13,9 @@ namespace MultiLanguage.Controllers
         DateTimeOffset dateTimeNow = DateTimeOffset.Now;
         public ActionResult Index()
         {
+            Singleton.Instance.writeMessage("Language button clicked at: " + dateTimeNow.LocalDateTime);
             Thread t = new Thread(new ThreadStart(Singleton.WriteToConsole));
             t.Start();
-            Singleton.Instance.writeMessage("Language button clicked at: " + dateTimeNow.LocalDateTime);
             return View();
         }
 

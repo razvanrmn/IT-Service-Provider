@@ -1,30 +1,56 @@
 ﻿@model IEnumerable<MultiLanguage.Models.ProductModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = MultiLanguage.Res.Resource.Products;
     Layout = "~/Views/Shared/_Layout.cshtml";
     <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
 }
 
-<h2>Products</h2>
+<h2>@Html.Label(MultiLanguage.Res.Resource.Products)</h2>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Basic Package</h2>
+        <h4>Basic Package</h4>
         <p>
-            Description
+            <ul>
+                <li>Site Monitoring</li>
+                <li>Analytics</li>
+                <li>Backups </li>
+                <li>Support</li>
+                <li>Price: 500</li>
+            </ul>
         </p>
         <p><a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 1}) </p>
     </div>
     <div class="col-md-4">
-        <h2>Advanced Package</h2>
-        <p>Description</p>
-        <p> <a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 2}) </p>
+        <h4>Advanced Package</h4>
+        <p>
+            <ul>
+                <li>Regular updates</li>
+                <li>Site Monitoring</li>
+                <li>Analytics</li>
+                <li>Backups </li>
+                <li>Support</li>
+                <li>Price: 1000</li>
+            </ul>
+        </p>
+        <p> <a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new { id = 2 }) </p>
     </div>
     <div class="col-md-4">
-        <h2>Pro Package</h2>
-        <p>Description</p>
-        <p><a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new {id = 3}) </p>
+        <h4>Pro Package</h4>
+        <p>
+            <ul>
+                <li>Develop a website</li>
+                <li>Deploying a website </li>
+                <li>Regular updates</li>
+                <li>Site Monitoring</li>
+                <li>Analytics</li>
+                <li>Backups </li>
+                <li>Support</li>
+                <li>Price: 1500</li>
+            </ul>
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink(MultiLanguage.Res.Resource.Buy, "Buy", new { id = 3 }) </p>
     </div>
 </div>
 </table>

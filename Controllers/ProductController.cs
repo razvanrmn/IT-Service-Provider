@@ -20,20 +20,20 @@ namespace MultiLanguage.Controllers
             t.Start();
             return View(context.Products.ToList());
         }
-        [HttpGet]
-        public ActionResult Buy()
+        
+        public ActionResult Buy(int id)
         {
-            ProductModel model = new ProductModel();
+            ProductModel model = context.Products.Find(id);
+            if(model == null)
+            {
+                return HttpNotFound();
+            }
+            ShoppingListModel model1= new ShoppingListModel();
+            model1.Name = model.Name;
+            model1.Description = model.Description;
+            model1.Price = model.Price;
             Singleton.Instance.writeMessage("Buy button clicked at: " + dateTimeNow.LocalDateTime);
-            Thread t = new Thread(new ThreadStart(Singleton.WriteToConsole));
-            t.Start();
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Buy(ShoppingListModel model)
-        {
-            Singleton.Instance.writeMessage("Buy button clicked at: " + dateTimeNow.LocalDateTime);
-            context.ShoppingList.Add(model);
+            context.ShoppingList.Add(model1);
             context.SaveChanges();
             Thread t = new Thread(new ThreadStart(Singleton.WriteToConsole));
             t.Start();
