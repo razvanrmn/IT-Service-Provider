@@ -36,3 +36,6 @@
  
  <h3>• Butoane EN HU RO •</h3>
 -> Am creeat un DLL legat static la proiect pentru a oferi suport multilanguage.
+
+ <h3>• Extra feature •</h3>
+-> La pornirea aplicatiei se creeaza un Thread care se foloseste de Trace pentru a scrie in terminal o data la 5 secunde mesajul "Page is loading . . ." si efectueaza aceeasi operatie la schimbarea paginii.
