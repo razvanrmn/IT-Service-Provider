@@ -1,6 +1,8 @@
 <h1 align="center">IT Service Provider application created by Bogi x Razvan</h1>
 <h2 align="center">Diagrama UML</h2>
 
+<img src="Untitled Diagram.jpg" width="100%" height="100%">
+
 <h2 align="center">Prezentarea proiectului</h2>
 <h3>• Butonul home •</h3>
 -> Incarca pagina principala.
