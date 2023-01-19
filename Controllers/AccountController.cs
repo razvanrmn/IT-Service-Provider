@@ -40,7 +40,7 @@ namespace MultiLanguage.Controllers
         {
             Singleton.Instance.writeMessage("Create button clicked at: " + dateTimeNow.LocalDateTime);
             var user = context.Accounts.SingleOrDefault(x => x.Username == model.Username || x.Password == model.Password || x.Email == model.Email);
-            string pass = cryptPass(model.Password);
+            string pass = Crypto.Class.cryptPass(model.Password);
             if (user == null)
             {
                 model.Password = pass;
@@ -116,14 +116,6 @@ namespace MultiLanguage.Controllers
             return RedirectToAction("Index");
         }
 
-        public string cryptPass(string password)
-        {
-            byte[] strings = Encoding.UTF8.GetBytes("aaaaa");
-            HashAlgorithm cryptoProvider = new SHA256CryptoServiceProvider();
-            byte[] hashValue = null;
-            hashValue = cryptoProvider.ComputeHash(strings);
-            return Encoding.UTF8.GetString(hashValue);
-        }
 
     }
 }
