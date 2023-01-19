@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using static System.Net.Mime.MediaTypeNames;
@@ -25,7 +27,15 @@ namespace MultiLanguage
             }
             Console.WriteLine("File created");
         }
-
+        public static void WriteToConsole()
+        {
+            Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
+            Trace.AutoFlush = true;
+            Trace.Indent();
+            Trace.WriteLine("Page is loading . . .");
+            Thread.Sleep(5000);
+           
+        }
         public void writeMessage(string message)
         {
             try
