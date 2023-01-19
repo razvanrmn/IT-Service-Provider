@@ -27,7 +27,7 @@
 <h3>• Butonul account •</h3> 
 -> Afiseaza utilizatorii, parolele acestora si email-ul alaturi de optiunea de a modifica/sterge un anumit utilizator.
 
--> Parola va fi criptata iar pe site se va calcula si afisa hash code-ul acesteia, din motive de securitate.
+-> Parola va fi criptata iar pe site se va calcula si afisa hash code-ul acesteia, din motive de securitate. Am implementat un DLL legat static la proiect pentru criptarea acesteia.
                   
 <h3>• Butonul create •</h3>
 -> Creeaza un utilizator nou.
